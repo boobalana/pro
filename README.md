@@ -1,10 +1,10 @@
-# Basic Multi container Application in kubernetes
+# Basic Multi container Application in Kubernetes
 
 In this demo project we are using React client, Node.js backend, PostgreSQL and Nginx for application and Deployment using Kubernetes.
 
 It is a basic application to get inputs as numbers from client and retrieve saved numbers from Database.
 
-#Lets Get Started with the deployment.
+#Lets get started with deployment.
 
 ## Pre-Requisites
 1. Install [minikube](https://minikube.sigs.k8s.io/docs/start/)
@@ -26,13 +26,17 @@ In this demo we are using 3 containers
 ```shell
 git clone https://github.com/boobalana/pro.git pro
 cd pro/apps
+```
 
-#Build Image for Client
+### Build Image for Client
+```
 cd client
 docker build -t <imagename:version> .
 docker push <imagename:version> <repo/imagename:version>
+```
 
-#Build Image for Server
+### Build Image for Server
+```
 cd ../server
 docker build -t <imagename:version> .
 docker push <imagename:version> <repo/imagename:version>
@@ -40,9 +44,9 @@ docker push <imagename:version> <repo/imagename:version>
 
 i will be using following images which are created using above steps.
 
-[Server](https://hub.docker.com/repository/docker/boobalan/pro-server)
-[CLIENT](https://hub.docker.com/repository/docker/boobalan/pro-client)
-postgres : public postgres image
+- [Server](https://hub.docker.com/repository/docker/boobalan/pro-server)
+- [Client](https://hub.docker.com/repository/docker/boobalan/pro-client)
+- [Postgres](https://hub.docker.com/_/postgres)
 
 
 ## Kubernetes Manifest
@@ -73,4 +77,8 @@ kubectl create -k overlays/prod
 kubectl  get all --namespace=prod
 
 ```
-
+### Cleanup of resources.
+```
+kubectl create -k overlays/dev
+kubectl create -k overlays/prod
+```
