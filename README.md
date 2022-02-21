@@ -77,8 +77,15 @@ kubectl create -k overlays/prod
 kubectl  get all --namespace=prod
 
 ```
+
+## Accessing Application
+```
+minikube svc <Client SVC> --url
+```
+once all the resources are created. clinet can be accessible from the output URL.
+
 ### Cleanup of resources.
 ```
-kubectl create -k overlays/dev
-kubectl create -k overlays/prod
+kubectl delete -k overlays/dev
+kubectl delete -k overlays/prod
 ```
