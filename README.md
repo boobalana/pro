@@ -69,6 +69,8 @@ Under infra folder we have kustomize templates to deploy Application in multiple
 
 Base folder holds all the kubernetes manifest and kustomize file 
 overlays will be used to have custom configuration based on Environment. Example here are running 1 replica for dev and 2 replica for Prod
+
+Each Environments can deployed in its own namespace here we use 2 namespace Dev & Prod
 ```
 cd infra
 kubectl create -k overlays/dev
@@ -79,10 +81,16 @@ kubectl  get all --namespace=prod
 ```
 
 ## Accessing Application
+Ensure all resources are in running state.
+```
+kubectl  get all --namespace=dev
+kubectl  get all --namespace=prod
+```
+Accessing with URL.
 ```
 minikube svc <Client SVC> --url
 ```
-once all the resources are created. clinet can be accessible from the output URL.
+Access with the above URL in Browser.
 
 ### Cleanup of resources.
 ```
