@@ -1,0 +1,11 @@
+resources:
+  - client-cluster-ip-service.yml
+  - client-deployment.yml
+  - db-secret.yaml
+  - database-persistent-volume-claim.yml
+  - postgres-cluster-ip-service.yml
+  - postgres-deployment.yml
+  - server-cluster-ip-service.yml
+  - server-deployment.yml
+commonLabels:
+  owner: bb

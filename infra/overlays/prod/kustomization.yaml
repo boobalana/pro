@@ -1,0 +1,16 @@
+bases:
+  - ../../base
+
+namePrefix: prod-
+
+commonLabels:
+  env: prod
+
+patches:
+  - client-replica.yaml
+  - server-replica.yaml
+
+resources:
+  - namespace.yaml
+
+namespace: prod  

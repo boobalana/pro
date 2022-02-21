@@ -1,0 +1,16 @@
+bases:
+  - ../../base
+
+namePrefix: dev-
+
+commonLabels:
+  env: dev
+
+patches:
+  - client-replica.yaml
+  - server-replica.yaml
+
+resources:
+  - namespace.yaml
+
+namespace: dev
