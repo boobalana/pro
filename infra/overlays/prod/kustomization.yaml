@@ -6,11 +6,13 @@ namePrefix: prod-
 commonLabels:
   env: prod
 
+#Update Replica count
 patches:
   - client-replica.yaml
   - server-replica.yaml
 
+#Seperate Namespace
 resources:
   - namespace.yaml
 
-namespace: prod  
+namespace: prod
