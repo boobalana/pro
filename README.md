@@ -70,7 +70,7 @@ Under infra folder we have kustomize templates to deploy Application in multiple
 Base folder holds all the kubernetes manifest and kustomize file 
 overlays will be used to have custom configuration based on Environment. Example here are running 1 replica for dev and 2 replica for Prod
 
-Each Environments can deployed in its own namespace here we use 2 namespace Dev & Prod
+Each Environments can deployed in its own namespace Here we are using 2 namespace i.e Dev & Prod
 ```
 cd infra
 kubectl create -k overlays/dev
